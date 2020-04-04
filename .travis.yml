@@ -1,0 +1,7 @@
+language: node_js
+node_js: 13.9
+services: mongodb
+before_script:
+  - npm install
+script:
+  - npm test
