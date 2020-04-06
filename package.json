@@ -1,6 +1,7 @@
 {
   "name": "toodue-backend",
   "jest": {
+    "setupFilesAfterEnv": ["./jest.setup.js"],
     "testEnvironment": "node"
   },
   "version": "1.0.0",

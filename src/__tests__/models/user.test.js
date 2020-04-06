@@ -6,15 +6,6 @@ const sinon = require('sinon');
 const bcrypt = require('bcrypt');
 
 describe('user model', () => {
-  beforeAll(async () => {
-    const url = 'mongodb://localhost/test';
-    await mongoose.connect(url, { useNewUrlParser: true });
-  });
-
-  afterAll(async () => {
-    await mongoose.connection.close();
-  });
-
   beforeEach(() => {
     const user = new User({ name: 'test', email: 'test@test.com', password: 'pass123' });
     return user.save();
@@ -22,7 +13,7 @@ describe('user model', () => {
 
   afterEach(() => {
     sinon.restore();
-    return User.remove({});
+    return User.deleteMany({});
   });
 
   describe('hashPassword middleware', () => {
