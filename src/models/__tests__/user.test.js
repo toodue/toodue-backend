@@ -1,7 +1,7 @@
 const _bind = require('lodash/bind');
 const mongoose = require('mongoose');
-const User = require('../../models/user');
-const userSchema = require('../../models/user/userSchema');
+const User = require('../user');
+const userSchema = require('../user/userSchema');
 const sinon = require('sinon');
 const bcrypt = require('bcrypt');
 
